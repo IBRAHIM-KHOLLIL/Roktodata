@@ -1,0 +1,136 @@
+using System;
+using System;
+
+public class User
+{
+    private string name;
+    private int age;
+    private string bloodgrp;
+    private string address;
+    private int number;
+    private string password;
+    
+
+        public string Name
+        {
+            get => name; 
+            set => name = value;
+        }
+        public int Age 
+        {
+            get => age;
+            set => age = value;
+        }
+        public string Bloodgrp 
+        {
+            get => bloodgrp;
+            set => bloodgrp = value;
+        }
+        public string Address
+        {
+            get => address; 
+            set => address = value;
+        }
+        public int Number
+        {
+            get => number;
+            set => number = value;
+        }
+        public string Password 
+        {
+            get => password;
+            set => password = value;
+        }
+        
+        public void ShowInfo()
+        {
+           // Console.WriteLine("Name: " + Name);
+            Console.WriteLine("Enter Your Name:");
+            string Name = Console.ReadLine();
+            
+            Console.WriteLine("Enter Your Age:");
+            int Age = Convert.ToInt32(Console.ReadLine());
+            
+            Console.WriteLine("Enter Blood Group:");
+            string Bloodgrp = Console.ReadLine();
+            
+            Console.WriteLine("Enter Your Address:");
+            string Address = Console.ReadLine();
+            
+            Console.WriteLine("Enter Your Number:");
+            int Number = Convert.ToInt32(Console.ReadLine());
+            
+            Console.WriteLine("Enter Your Password:");
+            string Password = Console.ReadLine();
+            
+            Console.WriteLine("........................");
+            
+            Console.WriteLine("Name: " + Name);
+            Console.WriteLine("Age: " + Age);
+            Console.WriteLine("Blood Group: " + Bloodgrp);
+            Console.WriteLine("Address: " + Address);
+            Console.WriteLine("Phone Number: " + Number);
+        }
+    }
+
+
+
+
+ 
+
+
+ public class Properties
+    {
+
+
+        static void Main(string[] args)
+        {
+            User registration = new User();
+            string username, password;
+       int ctr = 0;
+       Console.Write("\n\nEnter username and password :\n");
+	   
+       Console.Write("------------------------------------------------------\n"); 
+         
+        do
+        {
+			Console.Write("Input a username: ");
+			username = Console.ReadLine();
+ 
+			Console.Write("Input a password: ");
+			password = Console.ReadLine();
+			
+             if(username != "abcd" || password != "1234")
+             ctr++;
+             else
+             ctr=1;
+     
+        }
+        while((username != "abcd" || password != "1234")  && (ctr != 3));
+	 
+        if (ctr == 3)
+           {
+            Console.Write("\nLogin attemp three or more times. Try later!\n\n");
+           }
+        else   
+            {Console.Write("\nThe password entered successfully!\n\n");
+            registration.ShowInfo();
+            }
+            
+            
+
+           
+           /* registration.Name = "PP";
+            registration.Age = 45;
+            registration.Bloodgrp= "AB";
+            registration.Address = "AAAAA";
+            registration.Number = 11111;*/
+
+
+            
+           // registration.ShowInfo();
+
+            Console.WriteLine();
+        }
+
+    }
